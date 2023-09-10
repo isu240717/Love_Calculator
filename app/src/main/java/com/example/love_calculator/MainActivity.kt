@@ -3,38 +3,22 @@ package com.example.love_calculator
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.love_calculator.databinding.ActivityMainBinding
 import com.example.love_calculator.model.LoveModel
 import retrofit2.Call
 import retrofit2.Response
-import javax.security.auth.callback.Callback
 
-class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+class MainActivity : AppCompatActivity(R.layout.activity_main) {
+
+    private val binding: ActivityMainBinding by viewBinding()
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        initClickers()
     }
 
-    private fun initClickers() {
-        with(binding) {
-            btnCalculate.setOnClickListener {
-                RetrofitService().api.calculateMatching(
-                    firstEt.text.toString(),
-                    secondEt.text.toString()
-                ).enqueue(object : retrofit2.Callback<LoveModel>{
-                    override fun onResponse(call: Call<LoveModel>, response: Response<LoveModel>) {
-                        Log.e("ololo", "onResponse: ${response.body()}")
-                    }
 
-                    override fun onFailure(call: Call<LoveModel>, t: Throwable) {
-                        Log.e("ololo", "onFailure: ${t.message}")
-                    }
-
-                })
-            }
-        }
-    }
 }
