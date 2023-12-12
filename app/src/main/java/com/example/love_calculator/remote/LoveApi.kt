@@ -1,6 +1,5 @@
-package com.example.love_calculator
+package com.example.love_calculator.remote
 
-import com.example.love_calculator.model.LoveModel
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Query

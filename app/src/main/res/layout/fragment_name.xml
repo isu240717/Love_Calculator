@@ -5,16 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FF9ADA"
-    tools:context=".ui.MainFragment"
-    android:padding="16dp">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="280dp"
-        android:background="@drawable/love_img"/>
+    tools:context=".NameFragment"
+    android:padding="16dp"
+    tools:ignore="ExtraText">
 
 
     <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginVertical="60dp"
         android:id="@+id/et_label"
         android:layout_marginTop="10dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -56,6 +53,16 @@
         android:background="#FF3CA7"
         android:layout_marginTop="16dp"
         android:textSize="18sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF3CA7"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:text="@string/history"
+        />
 
 
 
